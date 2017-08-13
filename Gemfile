@@ -31,8 +31,6 @@ gem 'pg'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-instagram', '~> 1.0', '>= 1.0.2'
 gem 'omniauth-github'
 
 # OCR Reader

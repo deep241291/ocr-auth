@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>OCR </h2>   
+ <div class="row">
+   <%= form_tag ocrs_path, method: :post, :multipart => true do %>
+     <label> Upload Image : </label>
+     <div class='display-block'>
+       <%= file_field_tag :file %>
+     </div>  
+     <%= submit_tag 'Upload' %>
+   <% end %>  
+ </div>
+ 
+ <div class="row">
+   <table class="table">
+     <thead>
+       <tr>
+         <th>Id</th>
+         <th>Parsed Text </th>
+         <th>Delete Image</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @ocrs.each do |ocr| %>
+         <tr>
+           <td><%= ocr.id %></td> 
+           <td><%= ocr.results %></td>
+           <td><%= link_to 'Destroy', ocr, :method => :delete %></td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+ </div>    
+</div>
